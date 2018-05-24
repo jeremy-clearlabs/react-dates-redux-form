@@ -5,15 +5,19 @@ import momentPropTypes from 'react-moment-proptypes';
 import { Field } from 'redux-form';
 
 import { SingleDatePicker } from 'react-dates';
+import 'react-dates/initialize';
+import 'react-dates/lib/css/_datepicker.css';
 
 // Wrap the Airbnb component so that it conforms to the property API expected by redux-form
 // See: https://github.com/erikras/redux-form/issues/1860
+// Styling with Styled-Components? https://github.com/erikras/redux-form/issues/1860#issuecomment-353967941
 // Also, see: https://github.com/airbnb/react-dates/blob/master/examples/SingleDatePickerWrapper.jsx
 class DateField extends Component {
-  // The props are supplied via redux-form's <Field /> component
+  
   static propTypes = {
     autoFocus: PropTypes.bool,
     initialDate: momentPropTypes.momentObj,
+    // The props are supplied via redux-form's <Field /> component
     input: PropTypes.shape({
       onBlur: PropTypes.func.isRequired,
       onChange: PropTypes.func.isRequired,
@@ -38,7 +42,7 @@ class DateField extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    // on clear
+    // on clear values
     if (this.props.input.value === '' && prevProps.input.value !== this.props.input.value) {
       this.onDateChange(null);
     }

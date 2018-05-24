@@ -1,7 +1,11 @@
 import React from 'react';
 import { Field } from 'redux-form';
 
-import { DateField } from '../index'
+import {
+  // DateField,
+  SingleDatePickerField,
+  DateRangePickerField
+} from '../index';
 
 const SimpleForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
@@ -19,12 +23,23 @@ const SimpleForm = props => {
         </div>
       </div>
       <div>
-        <label>Start and End Date</label>
+        <label>Start Date</label>
         <div>
           <Field
             name="startDate"
-            component={DateField}
-            type="datetime"
+            id="start-date"
+            component={SingleDatePickerField}
+            placeholder="Start Date"
+          />
+        </div>
+      </div>
+      <div>
+        <label>Date Range</label>
+        <div>
+          <Field
+            name="dateRange"
+            component={DateRangePickerField}
+            id="date-range"
           />
         </div>
       </div>

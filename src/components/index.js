@@ -3,6 +3,8 @@ import About from './About';
 import Form from './Form';
 import SimpleForm from './SimpleForm';
 import DateField from './DateField';
+import DateRangePickerField from './DateRangePickerField';
+import SingleDatePickerField from './SingleDatePickerField';
 
 export {
     App,
@@ -10,4 +12,6 @@ export {
     Form,
     SimpleForm,
     DateField,
+    DateRangePickerField,
+    SingleDatePickerField,
 };
