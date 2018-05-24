@@ -1,5 +1,7 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
+import 'react-dates/initialize';
+import 'react-dates/lib/css/_datepicker.css';
 
 import { About, Form } from '../index';
 import { Home } from '../../containers';

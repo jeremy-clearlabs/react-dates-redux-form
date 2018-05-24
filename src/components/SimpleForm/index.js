@@ -1,6 +1,8 @@
 import React from 'react';
 import { Field } from 'redux-form';
 
+import { DateField } from '../index'
+
 const SimpleForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
   return (
@@ -13,6 +15,16 @@ const SimpleForm = props => {
             component="input"
             type="text"
             placeholder="First Name"
+          />
+        </div>
+      </div>
+      <div>
+        <label>Start and End Date</label>
+        <div>
+          <Field
+            name="startDate"
+            component={DateField}
+            type="datetime"
           />
         </div>
       </div>
