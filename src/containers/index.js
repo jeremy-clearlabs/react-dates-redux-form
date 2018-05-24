@@ -1,5 +1,4 @@
 import Home from './Home';
+import SimpleForm from './SimpleForm';
 
-export {
-  Home,
-};
+export { Home, SimpleForm };
